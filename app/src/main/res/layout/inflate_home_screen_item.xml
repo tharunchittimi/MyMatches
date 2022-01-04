@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfileDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/imgProfilePic"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_one"
+                app:layout_constraintDimensionRatio="W,1:1.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <TextView
+                android:id="@+id/tvUserProfileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd"
+                app:layout_constraintStart_toStartOf="@id/guideStart"
+                app:layout_constraintTop_toBottomOf="@id/imgProfilePic"
+                tools:text="Pragati" />
+
+            <TextView
+                android:id="@+id/tvUserAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/light_black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd"
+                app:layout_constraintStart_toStartOf="@id/guideStart"
+                app:layout_constraintTop_toBottomOf="@id/tvUserProfileName"
+                tools:text="27 yrs, 5 ft 5in, MBBS, Doctor, Poosam, Hindu - Kayastha, Chennai, Tamil Nadu." />
+
+            <View
+                android:id="@+id/viewUnderLine"
+                android:layout_width="0dp"
+                android:layout_height="0.025dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd"
+                app:layout_constraintStart_toStartOf="@id/guideStart"
+                app:layout_constraintTop_toBottomOf="@id/tvUserAddress" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:numStars="1"
+                android:rating="3.5"
+                app:layout_constraintStart_toStartOf="@id/guideStart"
+                app:layout_constraintTop_toBottomOf="@id/viewUnderLine" />
+
+            <TextView
+                android:id="@+id/tvShortlistHeading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Shortlist"
+                android:textColor="@color/light_black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/tvLikeHerHeading"
+                app:layout_constraintStart_toEndOf="@id/ratingBar"
+                app:layout_constraintTop_toBottomOf="@id/viewUnderLine" />
+
+            <TextView
+                android:id="@+id/tvLikeHerHeading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="Like her?"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/btnNo"
+                app:layout_constraintStart_toEndOf="@id/tvShortlistHeading"
+                app:layout_constraintTop_toBottomOf="@id/viewUnderLine" />
+
+            <Button
+                android:id="@+id/btnNo"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="No"
+                app:layout_constraintBottom_toBottomOf="@id/tvLikeHerHeading"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd"
+                app:layout_constraintStart_toEndOf="@id/tvLikeHerHeading"
+                app:layout_constraintTop_toBottomOf="@id/viewUnderLine" />
+
+            <Button
+                android:id="@+id/btnYes"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="Yes"
+                app:layout_constraintStart_toStartOf="@id/btnNo"
+                app:layout_constraintTop_toBottomOf="@id/btnNo" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:minHeight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnYes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

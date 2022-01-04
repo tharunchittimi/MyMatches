@@ -1,0 +1,3 @@
+rootProject.name = "MyMatches"
+include ':app'
+include ':recyclerviewlibrary'
